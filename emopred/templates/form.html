@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Prediction</title>
+</head>
+<body>
+    <h1>🔎 Emoji Prediction 🔍</h1>
+    <form action="/predict" method="post">
+        <label for="age">Age:</label>
+        <input type="range" id="age" name="age" min="0" max="100" oninput="ageOutput.value = age.value">
+        <output id="ageOutput">50</output>
+
+        <p>Gender:</p>
+        <input type="radio" id="male" name="gender" value="0" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="1" />
+        <label for="female">Female</label>
+
+        <br/>
+        <br/>
+        <br/>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <h2>Predicted Emoji: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
